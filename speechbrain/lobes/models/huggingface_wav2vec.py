@@ -100,6 +100,7 @@ class HuggingFaceWav2Vec2(nn.Module):
         freeze=True,
         freeze_feature_extractor=False,
         apply_spec_augment=False,
+        layer_index=-1,
     ):
         super().__init__()
 
@@ -119,14 +120,15 @@ class HuggingFaceWav2Vec2(nn.Module):
         else:
             config = HF_config.get("wav2vec2")
             model = HF_models.get("wav2vec2")
-
         # Download and load the model
         self._from_pretrained(
             source, config=config, model=model, save_path=save_path
         )
-
         # set apply_spec_augment
         self.model.config.apply_spec_augment = apply_spec_augment
+        self.model.config.output_hidden_states = True
+        self.model.config.layer_drop = 0
+        self.layer_index = layer_index
 
         # We check if inputs need to be normalized w.r.t pretrained wav2vec2
         self.normalize_wav = self.feature_extractor.do_normalize
@@ -278,7 +280,7 @@ class HuggingFaceWav2Vec2(nn.Module):
             wav = F.layer_norm(wav, wav.shape)
 
         # Extract wav2vec output
-        out = self.model(wav)[0]
+        out = self.model(wav)[2][self.layer_index]
 
         # We normalize the output if required
         if self.output_norm:
