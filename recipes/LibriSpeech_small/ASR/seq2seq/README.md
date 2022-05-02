@@ -1,8 +1,8 @@
 # LibriSpeech ASR with seq2seq models.
-This folder contains the scripts to train a seq2seq system using LibriSpeech (10 hrs).
-You can download LibriSpeech at [here](https://dl.fbaipublicfiles.com/librilight/data/librispeech_finetuning.tgz)
-and find the instruction about the data at [here](https://github.com/facebookresearch/libri-light/blob/main/data_preparation/README.md#2-get-the-limited-supervision-train-data)
-The csv files can be donwloaded [here](https://home.ttic.edu/~jcchou/course_files/csvs.zip)
+This folder contains the scripts to train a seq2seq system using LibriSpeech (10 hrs). <br>
+You can download LibriSpeech at [here](https://dl.fbaipublicfiles.com/librilight/data/librispeech_finetuning.tgz)<br>
+and find the instruction about the data at [here](https://github.com/facebookresearch/libri-light/blob/main/data_preparation/README.md#2-get-the-limited-supervision-train-data)<br>
+The csv files can be donwloaded [here](https://home.ttic.edu/~jcchou/course_files/csvs.zip)<br>
 
 # How to run
 python train.py hparams/file.yaml
