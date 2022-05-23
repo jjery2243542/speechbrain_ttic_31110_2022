@@ -145,28 +145,13 @@ We are currently implementing speech synthesis pipelines and real-time speech pr
 SpeechBrain is constantly evolving. New features, tutorials, and documentation will appear over time.
 SpeechBrain can be installed via PyPI. Moreover,  a local installation can be used by those users that what to run experiments and modify/customize the toolkit. SpeechBrain supports both CPU and GPU computations. For most all the recipes, however, a GPU is necessary during training. Please note that CUDA must be properly installed to use GPUs.
 
-
-## Install via PyPI
-
-Once you have created your Python environment (Python 3.8+) you can simply type:
-
-```
-pip install speechbrain
-```
-
-Then you can access SpeechBrain with:
-
-```
-import speechbrain as sb
-```
-
 ## Install with GitHub
 
 Once you have created your Python environment (Python 3.8+) you can simply type:
 
 ```
-git clone https://github.com/speechbrain/speechbrain.git
-cd speechbrain
+git clone https://github.com/jjery2243542/speechbrain_ttic_31110_2022.git
+cd speechbrain_ttic_31110_2022
 pip install -r requirements.txt
 pip install --editable .
 ```
